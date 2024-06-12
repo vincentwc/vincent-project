@@ -12,4 +12,5 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/sys-dict")
 public class SysDictController {
 
+
 }
