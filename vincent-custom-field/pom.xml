@@ -19,10 +19,16 @@
 
     <dependencies>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-            <scope>test</scope>
+            <groupId>com.vincent</groupId>
+            <artifactId>vincent-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.vincent</groupId>
+            <artifactId>vincent-mbg</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
     </dependencies>
 </project>

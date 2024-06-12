@@ -16,7 +16,6 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <hutool.version>5.7.21</hutool.version>
-        <lombok.version>1.18.20</lombok.version>
         <vincent-common.version>1.0-SNAPSHOT</vincent-common.version>
         <vincent-mbg.version>1.0-SNAPSHOT</vincent-mbg.version>
         <vincent-project.version>1.0-SNAPSHOT</vincent-project.version>
@@ -36,6 +35,26 @@
         <version>2.2.6.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
 
 
     <dependencyManagement>
@@ -58,20 +77,6 @@
                 <artifactId>vincent-custom-field</artifactId>
                 <version>${vincent-custom-field.version}</version>
             </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-aop</artifactId>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-test</artifactId>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${lombok.version}</version>
-            </dependency>
             <!--mysql版本-->
             <dependency>
                 <groupId>mysql</groupId>
@@ -90,11 +95,7 @@
                 <artifactId>mybatis-plus-generator</artifactId>
                 <version>${mybatis-plus-generator.version}</version>
             </dependency>
-            <!--freemarker模板，用于mybatisPlus代码生成-->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-freemarker</artifactId>
-            </dependency>
+
             <!--druid连接池-->
             <dependency>
                 <groupId>com.alibaba</groupId>
