@@ -3,7 +3,6 @@ package com.vincent.result;
 /**
  * @author Vincent
  */
-
 public enum ResultCodeEnum {
 
     SUCCESS(20000, "响应成功"),
