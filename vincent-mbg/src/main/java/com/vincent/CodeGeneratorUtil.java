@@ -25,7 +25,7 @@ public class CodeGeneratorUtil {
     /**
      * 数据库 URL
      */
-    private static final String URL = "jdbc:mysql://127.0.0.1:3306/demo?characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2b8";
+    private static final String URL = "jdbc:mysql://127.0.0.1:3306/demo?characterEncoding=utf8&useSSL=false";
     /**
      * 数据库驱动
      */

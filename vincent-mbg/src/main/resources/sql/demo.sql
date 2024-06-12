@@ -14,20 +14,3 @@ create table user_info
   DEFAULT CHARSET = utf8mb4
   COLLATE = utf8mb4_general_ci COMMENT ='用户表';
 
-
-/*==============================================================*/
-/* Table: custom_field    自定义字段表                            */
-/*==============================================================*/
-drop table if exists custom_field;
-create table custom_field
-(
-    id           varchar(64) NOT NULL comment '主键id',
-    core_field_1 varchar(64) comment '核心字段1',
-    core_field_2 varchar(64) comment '核心字段2',
-    core_field_3 varchar(64) comment '核心字段3',
-    custom_field json comment '自定义字段',
-    PRIMARY KEY (id) USING BTREE
-) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8mb4
-  COLLATE = utf8mb4_general_ci COMMENT ='自定义字段表';
-
