@@ -1,0 +1,35 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.vincent</groupId>
+        <artifactId>vincent-project</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <artifactId>vincent-basic-service</artifactId>
+    <packaging>war</packaging>
+    <name>vincent-basic-service Maven Webapp</name>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>com.vincent</groupId>
+            <artifactId>vincent-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.vincent</groupId>
+            <artifactId>vincent-mbg</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-annotations</artifactId>
+        </dependency>
+    </dependencies>
+    <build>
+        <finalName>vincent-basic-service</finalName>
+    </build>
+</project>

@@ -11,6 +11,7 @@
         <module>vincent-custom-field</module>
         <module>vincent-common</module>
         <module>vincent-mbg</module>
+        <module>vincent-basic-service</module>
     </modules>
 
     <properties>

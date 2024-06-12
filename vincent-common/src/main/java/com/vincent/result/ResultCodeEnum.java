@@ -1,4 +1,4 @@
-package com.vincent.util;
+package com.vincent.result;
 
 /**
  * @author Vincent

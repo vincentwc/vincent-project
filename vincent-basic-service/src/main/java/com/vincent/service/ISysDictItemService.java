@@ -1,7 +1,7 @@
 package com.vincent.service;
 
-import com.vincent.entity.SysDictItem;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.vincent.entity.SysDictItem;
 
 /**
  * @author vincent

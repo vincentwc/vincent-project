@@ -1,4 +1,4 @@
-package com.vincent.util;
+package com.vincent.result;
 
 import com.alibaba.fastjson.annotation.JSONField;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
