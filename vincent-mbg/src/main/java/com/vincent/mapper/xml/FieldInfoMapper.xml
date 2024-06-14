@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vincent.mapper.FieldInfoMapper">
+
+        <!-- 通用查询映射结果 -->
+        <resultMap id="BaseResultMap" type="com.vincent.entity.FieldInfo">
+                    <id column="id" property="id" />
+                    <result column="table_name" property="tableName" />
+                    <result column="field_name" property="fieldName" />
+                    <result column="field_eng" property="fieldEng" />
+                    <result column="field_type" property="fieldType" />
+                    <result column="field_unit" property="fieldUnit" />
+                    <result column="max_val" property="maxVal" />
+                    <result column="min_val" property="minVal" />
+                    <result column="created_by" property="createdBy" />
+                    <result column="created_time" property="createdTime" />
+                    <result column="updated_by" property="updatedBy" />
+                    <result column="updated_time" property="updatedTime" />
+                    <result column="description" property="description" />
+        </resultMap>
+
+        <!-- 通用查询结果列 -->
+        <sql id="Base_Column_List">
+            id, table_name, field_name, field_eng, field_type, field_unit, max_val, min_val, created_by, created_time, updated_by, updated_time, description
+        </sql>
+
+</mapper>

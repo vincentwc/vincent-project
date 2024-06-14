@@ -1,5 +1,7 @@
 package com.vincent.service.impl;
 
+import cn.hutool.core.util.StrUtil;
+import com.baomidou.mybatisplus.extension.conditions.update.LambdaUpdateChainWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.vincent.entity.SysDict;
 import com.vincent.entity.SysDictParam;
@@ -22,8 +24,20 @@ public class SysDictServiceImpl extends ServiceImpl<SysDictMapper, SysDict> impl
         SysDict sysDict = new SysDict();
         BeanUtils.copyProperties(dictParam, sysDict);
         sysDict
-                .setCreateTime(LocalDateTime.now())
-                .setCreateBy("vincent");
+                .setCreateBy("vincent")
+                .setCreateTime(LocalDateTime.now());
         return save(sysDict);
+    }
+
+    @Override
+    public boolean update(SysDictParam dictParam) {
+        return lambdaUpdate()
+                .set(SysDict::getDictName, dictParam.getDictName())
+                .set(SysDict::getDictCode, dictParam.getDictCode())
+                .set(SysDict::getUpdateBy, "vincent")
+                .set(SysDict::getDescription, dictParam.getDescription())
+                .set(SysDict::getUpdateTime, LocalDateTime.now())
+                .eq(SysDict::getId, dictParam.getId())
+                .update();
     }
 }

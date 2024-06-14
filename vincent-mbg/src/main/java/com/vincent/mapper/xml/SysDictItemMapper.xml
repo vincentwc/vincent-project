@@ -11,7 +11,7 @@
                     <result column="item_sort" property="itemSort" />
                     <result column="status" property="status" />
                     <result column="is_default" property="isDefault" />
-                    <result column="desc" property="desc" />
+                    <result column="description" property="description" />
                     <result column="create_by" property="createBy" />
                     <result column="create_time" property="createTime" />
                     <result column="update_by" property="updateBy" />

@@ -1,6 +1,9 @@
 package com.vincent.entity;
 
+import com.vincent.valid.DeleteValidGroup;
 import com.vincent.valid.InsertValidGroup;
+import com.vincent.valid.QueryValidGroup;
+import com.vincent.valid.UpdateValidGroup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -18,18 +21,22 @@ import javax.validation.constraints.NotBlank;
 @ApiModel(value = "字典请求体", description = "字典请求体数据，用于字典相关接口请求")
 public class SysDictParam {
 
+    @ApiModelProperty(value = "字典id")
+    @NotBlank(groups = {QueryValidGroup.class, UpdateValidGroup.class, DeleteValidGroup.class}, message = "字典Id不能为空")
+    private String id;
+
     /**
      * 字典名称
      */
     @ApiModelProperty(value = "字典名称")
-    @NotBlank(groups = {InsertValidGroup.class}, message = "字典名称不能为空")
+    @NotBlank(groups = {InsertValidGroup.class, UpdateValidGroup.class}, message = "字典名称不能为空")
     private String dictName;
 
     /**
      * 字典编码
      */
     @ApiModelProperty(value = "字典编码")
-    @NotBlank(groups = {InsertValidGroup.class}, message = "字典编码不能为空")
+    @NotBlank(groups = {InsertValidGroup.class, UpdateValidGroup.class}, message = "字典编码不能为空")
     private String dictCode;
 
     /**
@@ -42,6 +49,6 @@ public class SysDictParam {
      * 字典描述
      */
     @ApiModelProperty(value = "字典描述信息")
-    private String desc;
+    private String description;
 
 }

@@ -60,7 +60,7 @@ public class SysDictItem implements Serializable {
     /**
      * 字典项描述
      */
-    private String desc;
+    private String description;
 
     /**
      * 创建人

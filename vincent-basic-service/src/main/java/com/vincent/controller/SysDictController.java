@@ -5,6 +5,7 @@ import com.vincent.api.CommonResult;
 import com.vincent.entity.SysDictParam;
 import com.vincent.service.ISysDictService;
 import com.vincent.valid.InsertValidGroup;
+import com.vincent.valid.UpdateValidGroup;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -30,7 +31,7 @@ public class SysDictController {
     private ISysDictService dictService;
 
     /**
-     * 创建字段
+     * 创建字典
      *
      * @param dictParam
      * @return
@@ -43,6 +44,24 @@ public class SysDictController {
             return CommonResult.success();
         } else {
             return CommonResult.failed("字典保存失败");
+        }
+    }
+
+
+    /**
+     * 更新字典
+     *
+     * @param dictParam
+     * @return
+     */
+    @PostMapping("/update")
+    @ApiOperation(value = "更新字典", httpMethod = "POST")
+    public CommonResult updateDict(@RequestBody @Validated(UpdateValidGroup.class) SysDictParam dictParam) {
+        boolean updateFlag = dictService.update(dictParam);
+        if (updateFlag) {
+            return CommonResult.success();
+        } else {
+            return CommonResult.failed("字典跟新失败");
         }
     }
 

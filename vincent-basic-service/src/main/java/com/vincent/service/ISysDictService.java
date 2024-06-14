@@ -10,4 +10,6 @@ import com.vincent.entity.SysDictParam;
 public interface ISysDictService extends IService<SysDict> {
 
     boolean createDict(SysDictParam dictParam);
+
+    boolean update(SysDictParam dictParam);
 }
