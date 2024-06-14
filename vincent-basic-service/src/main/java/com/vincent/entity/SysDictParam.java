@@ -23,7 +23,7 @@ public class SysDictParam {
 
     @ApiModelProperty(value = "字典id")
     @NotBlank(groups = {QueryValidGroup.class, UpdateValidGroup.class}, message = "字典Id不能为空")
-    private String id;
+    private Integer id;
 
     /**
      * 字典名称
