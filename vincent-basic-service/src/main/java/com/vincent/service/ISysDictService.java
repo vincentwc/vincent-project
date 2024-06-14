@@ -23,4 +23,10 @@ public interface ISysDictService extends IService<SysDict> {
     List<SysDict> listDict();
 
     IPage<SysDict> pageDict();
+
+    /**
+     * @param dictId
+     * @return true-存在；false-不存在
+     */
+    boolean existsDict(Integer dictId);
 }

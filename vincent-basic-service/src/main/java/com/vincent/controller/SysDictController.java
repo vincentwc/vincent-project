@@ -7,7 +7,6 @@ import com.vincent.api.CommonResult;
 import com.vincent.entity.SysDict;
 import com.vincent.entity.SysDictParam;
 import com.vincent.service.ISysDictService;
-import com.vincent.valid.DeleteValidGroup;
 import com.vincent.valid.InsertValidGroup;
 import com.vincent.valid.UpdateValidGroup;
 import io.swagger.annotations.Api;
@@ -42,7 +41,7 @@ public class SysDictController {
     /**
      * 创建字典
      *
-     * @param dictParam
+     * @param dictParam 字典参数
      * @return
      */
     @PostMapping("/create")
@@ -60,7 +59,7 @@ public class SysDictController {
     /**
      * 更新字典
      *
-     * @param dictParam
+     * @param dictParam 字典参数
      * @return
      */
     @PutMapping("/update")
@@ -78,7 +77,7 @@ public class SysDictController {
     /**
      * 删除字典
      *
-     * @param id
+     * @param id id
      * @return
      */
     @DeleteMapping("/delete/{id}")
@@ -123,7 +122,6 @@ public class SysDictController {
 
         return CommonResult.success(pages);
     }
-
 
 
 }

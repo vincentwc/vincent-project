@@ -66,5 +66,13 @@ public class SysDictServiceImpl extends ServiceImpl<SysDictMapper, SysDict> impl
                 .page(pages);
     }
 
+    @Override
+    public boolean existsDict(Integer dictId) {
+        Integer count = lambdaQuery()
+                .exists("select id from sys_dict where id = " + dictId + " and del_flag = 0")
+                .count();
+        return count > 0;
+    }
+
 
 }

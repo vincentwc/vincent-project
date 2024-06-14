@@ -32,7 +32,9 @@ create table sys_dict
     `update_by`   varchar(32) NULL DEFAULT NULL COMMENT '更新人',
     `update_time` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
     `del_flag`    int(1) NOT NULL DEFAULT 0 COMMENT '删除状态',
-    PRIMARY KEY (`id`) USING BTREE
+    PRIMARY KEY (`id`) USING BTREE,
+--     字典编码唯一
+    UNIQUE INDEX `unique_dict_code` (`dict_code`) USING BTREE
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4
   COLLATE = utf8mb4_general_ci COMMENT ='字典表';
@@ -57,7 +59,9 @@ create table sys_dict_item
     `update_by`   varchar(32) NULL DEFAULT NULL COMMENT '更新人',
     `update_time` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
     `del_flag`    int(1) NOT NULL DEFAULT 0 COMMENT '删除状态',
-    PRIMARY KEY (`id`) USING BTREE
+    PRIMARY KEY (`id`) USING BTREE,
+    --     字典项值唯一
+    UNIQUE INDEX `unique_dict_item_val` (`dict_id`,`item_val`) USING BTREE
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4
   COLLATE = utf8mb4_general_ci COMMENT ='字典项表';
@@ -101,6 +105,10 @@ values (@fieldTypeDictId, '单行文本', @textSingle, 101, 1, '字段类型---�
        (@fieldTypeDictId, '浮点数', @numberFloat, 136, 1, '字段类型---浮点数'),
        (@fieldTypeDictId, '单选', @selectSingle, 131, 1, '字段类型---单选'),
        (@fieldTypeDictId, '多选', @selectMulti, 136, 1, '字段类型---多选');
+
+-- 2. 表字典
+insert into `sys_dict`(`dict_name`, `dict_code`, `description`)
+values ('表名称', 'table_name', '用来记录表名称字典信息');
 /*==============================================================*/
 
 
