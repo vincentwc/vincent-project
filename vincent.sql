@@ -92,15 +92,15 @@ SET
 @selectMulti = 'select_multi';
 insert into `sys_dict_item`(`dict_id`, `item_text`, `item_val`, `item_sort`, `is_default`, `description`)
 values (@fieldTypeDictId, '单行文本', @textSingle, 101, 1, '字段类型---单行文本'),
-       (@fieldTypeDictId, '多行文本', @textMulti, 102, 1, '字段类型---多行文本'),
-       (@fieldTypeDictId, '富文本', @textRich, 103, 1, '字段类型---富文本'),
-       (@fieldTypeDictId, '日期', @dateDate, 104, 1, '字段类型---日期'),
-       (@fieldTypeDictId, '时间', @dataTime, 105, 1, '字段类型---时间'),
-       (@fieldTypeDictId, '日期时间', @dateFull, 106, 1, '字段类型---日期时间'),
-       (@fieldTypeDictId, '整数', @numberInt, 107, 1, '字段类型---整数'),
-       (@fieldTypeDictId, '浮点数', @numberFloat, 108, 1, '字段类型---浮点数'),
-       (@fieldTypeDictId, '单选', @selectSingle, 109, 1, '字段类型---单选'),
-       (@fieldTypeDictId, '多选', @selectMulti, 110, 1, '字段类型---多选');
+       (@fieldTypeDictId, '多行文本', @textMulti, 106, 1, '字段类型---多行文本'),
+       (@fieldTypeDictId, '富文本', @textRich, 111, 1, '字段类型---富文本'),
+       (@fieldTypeDictId, '日期', @dateDate, 116, 1, '字段类型---日期'),
+       (@fieldTypeDictId, '时间', @dataTime, 121, 1, '字段类型---时间'),
+       (@fieldTypeDictId, '日期时间', @dateFull, 126, 1, '字段类型---日期时间'),
+       (@fieldTypeDictId, '整数', @numberInt, 131, 1, '字段类型---整数'),
+       (@fieldTypeDictId, '浮点数', @numberFloat, 136, 1, '字段类型---浮点数'),
+       (@fieldTypeDictId, '单选', @selectSingle, 131, 1, '字段类型---单选'),
+       (@fieldTypeDictId, '多选', @selectMulti, 136, 1, '字段类型---多选');
 /*==============================================================*/
 
 
