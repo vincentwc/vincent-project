@@ -23,13 +23,7 @@ public class SysDictItemController {
     @Resource
     private ISysDictItemService dictItemService;
 
-    /**
-     *
-     * @return
-     */
-    public CommonResult createDictItem() {
-        return null;
-    }
+
 
     @GetMapping("/list/{dictId}")
     @ApiOperation(value = "查询字典列表", httpMethod = "GET")
