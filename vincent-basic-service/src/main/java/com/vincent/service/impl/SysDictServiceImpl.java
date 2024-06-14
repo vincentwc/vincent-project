@@ -1,7 +1,9 @@
 package com.vincent.service.impl;
 
 import cn.hutool.core.util.StrUtil;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.conditions.update.LambdaUpdateChainWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.vincent.entity.SysDict;
 import com.vincent.entity.SysDictParam;
@@ -11,6 +13,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * @author vincent
@@ -30,7 +33,7 @@ public class SysDictServiceImpl extends ServiceImpl<SysDictMapper, SysDict> impl
     }
 
     @Override
-    public boolean update(SysDictParam dictParam) {
+    public boolean updateDict(SysDictParam dictParam) {
         return lambdaUpdate()
                 .set(SysDict::getDictName, dictParam.getDictName())
                 .set(SysDict::getDictCode, dictParam.getDictCode())
@@ -40,4 +43,30 @@ public class SysDictServiceImpl extends ServiceImpl<SysDictMapper, SysDict> impl
                 .eq(SysDict::getId, dictParam.getId())
                 .update();
     }
+
+    @Override
+    public int deleteDict(String id) {
+        return baseMapper.deleteById(id);
+    }
+
+    @Override
+    public SysDict detailDict(String id) {
+        return lambdaQuery()
+                .eq(SysDict::getId, id)
+                .one();
+    }
+
+    @Override
+    public List<SysDict> listDict() {
+        return lambdaQuery().list();
+    }
+
+    @Override
+    public IPage<SysDict> pageDict() {
+        IPage<SysDict> pages = new Page<>();
+        return lambdaQuery()
+                .page(pages);
+    }
+
+
 }

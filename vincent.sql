@@ -31,7 +31,7 @@ create table sys_dict
     `create_time` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
     `update_by`   varchar(32) NULL DEFAULT NULL COMMENT '更新人',
     `update_time` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
-    `del_flag`    int(1) NULL DEFAULT NULL COMMENT '删除状态',
+    `del_flag`    int(1) NOT NULL DEFAULT 0 COMMENT '删除状态',
     PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4
@@ -51,12 +51,12 @@ create table sys_dict_item
     `item_sort`   int(11) NULL DEFAULT NULL COMMENT '字典项排序',
     `status`      int(11) NULL DEFAULT NULL COMMENT '状态（1启用 0不启用）',
     `is_default`  int(11) NULL DEFAULT NULL COMMENT '默认字典项（1是 0否）',
-    `description`        VARCHAR(255) NOT NULL COMMENT '字典项描述',
+    `description` VARCHAR(255) NOT NULL COMMENT '字典项描述',
     `create_by`   varchar(32) NULL DEFAULT NULL COMMENT '创建人',
     `create_time` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
     `update_by`   varchar(32) NULL DEFAULT NULL COMMENT '更新人',
     `update_time` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
-    `del_flag`    int(1) NULL DEFAULT NULL COMMENT '删除状态',
+    `del_flag`    int(1) NOT NULL DEFAULT 0 COMMENT '删除状态',
     PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4
@@ -80,7 +80,7 @@ create table field_info
     `created_time` DATETIME COMMENT '创建时间',
     `updated_by`   VARCHAR(64) COMMENT '更新人',
     `updated_time` DATETIME COMMENT '更新时间',
-    `description`         TEXT COMMENT '字段描述信息',
+    `description`  TEXT COMMENT '字段描述信息',
     PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4

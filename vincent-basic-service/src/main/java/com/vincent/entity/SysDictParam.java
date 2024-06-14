@@ -22,7 +22,7 @@ import javax.validation.constraints.NotBlank;
 public class SysDictParam {
 
     @ApiModelProperty(value = "字典id")
-    @NotBlank(groups = {QueryValidGroup.class, UpdateValidGroup.class, DeleteValidGroup.class}, message = "字典Id不能为空")
+    @NotBlank(groups = {QueryValidGroup.class, UpdateValidGroup.class}, message = "字典Id不能为空")
     private String id;
 
     /**

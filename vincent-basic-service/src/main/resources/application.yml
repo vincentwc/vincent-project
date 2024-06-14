@@ -15,6 +15,7 @@ mybatis-plus:
   global-config:
     # 逻辑删除配置
     db-config:
+      logic-delete-field: delFlag
       # 删除前
       logic-not-delete-value: 0
       # 删除后

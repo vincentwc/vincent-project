@@ -4,7 +4,10 @@ import java.time.LocalDateTime;
 import java.io.Serializable;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableLogic;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -70,6 +73,8 @@ public class SysDict implements Serializable {
     /**
      * 删除状态
      */
+    @TableField(select = false) // 表示查询时，不展示该字段
+    @JsonIgnore // 表示序列化时，不展示该字段
     private Integer delFlag;
 
 
