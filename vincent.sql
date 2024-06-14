@@ -47,7 +47,7 @@ drop table if exists sys_dict_item;
 create table sys_dict_item
 (
     `id`          int(11) NOT NULL AUTO_INCREMENT COMMENT '字典id',
-    `dict_id`     VARCHAR(64)  NOT NULL COMMENT '字典id',
+    `dict_id`     int(11)  NOT NULL COMMENT '字典id',
     `item_text`   VARCHAR(128) NULL COMMENT '字典项文本',
     `item_val`    VARCHAR(128) NULL COMMENT '字典项值',
     `item_sort`   int(11) NULL DEFAULT NULL COMMENT '字典项排序',

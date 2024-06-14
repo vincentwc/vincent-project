@@ -32,7 +32,7 @@ public class SysDictItem implements Serializable {
     /**
      * 字典id
      */
-    private String dictId;
+    private Integer dictId;
 
     /**
      * 字典项文本
