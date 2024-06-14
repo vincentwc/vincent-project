@@ -110,7 +110,7 @@ public class SysDictController {
     }
 
     @GetMapping("/list")
-    @ApiOperation(value = "分页查询字典", httpMethod = "GET")
+    @ApiOperation(value = "查询字典列表", httpMethod = "GET")
     public CommonResult listDict() {
         List<SysDict> list = dictService.listDict();
         return CommonResult.success(list);
