@@ -6,7 +6,7 @@ create table sys_dict
 (
     `id`          varchar(64)  NOT NULL comment '主键id',
     `dict_name`   VARCHAR(64)  NOT NULL COMMENT '字典名称',
-    `dict_code`   VARCHAR(64)  NOT NULL COMMENT '字段编码',
+    `dict_code`   VARCHAR(64)  NOT NULL COMMENT '字典编码',
     `dict_type`   int(1) UNSIGNED NULL DEFAULT 0 COMMENT '字典类型0为string,1为number',
     `desc`        VARCHAR(255) NOT NULL COMMENT '字典描述',
     `create_by`   varchar(32) NULL DEFAULT NULL COMMENT '创建人',

@@ -33,7 +33,7 @@ public class SysDict implements Serializable {
     private String dictName;
 
     /**
-     * 字段编码
+     * 字典编码
      */
     private String dictCode;
 
