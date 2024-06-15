@@ -10,6 +10,7 @@ import lombok.Data;
 import lombok.experimental.Accessors;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Null;
 
 /**
@@ -23,7 +24,7 @@ import javax.validation.constraints.Null;
 public class SysDictParam {
 
     @ApiModelProperty(value = "字典id")
-    @NotBlank(groups = {QueryValidGroup.class, UpdateValidGroup.class}, message = "字典Id不能为空")
+    @NotNull(groups = {QueryValidGroup.class, UpdateValidGroup.class}, message = "字典Id不能为空")
     @Null(groups = {InsertValidGroup.class}, message = "字典项Id需为空")
     private Integer id;
 

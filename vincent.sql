@@ -131,7 +131,9 @@ create table field_info
     `updated_by`   VARCHAR(64) COMMENT '更新人',
     `updated_time` DATETIME COMMENT '更新时间',
     `description`  TEXT COMMENT '字段描述信息',
-    PRIMARY KEY (`id`) USING BTREE
+    PRIMARY KEY (`id`) USING BTREE,
+    --     同一个表里面的字段需要唯一
+    UNIQUE INDEX `unique_table_name_eng` (`table_name`,`field_eng`) USING BTREE
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4
   COLLATE = utf8mb4_general_ci COMMENT ='自定义字段表';
