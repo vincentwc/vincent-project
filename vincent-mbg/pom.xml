@@ -9,7 +9,6 @@
 
     <artifactId>vincent-mbg</artifactId>
     <packaging>jar</packaging>
-
     <name>vincent-mbg</name>
 
     <properties>
@@ -17,10 +16,6 @@
     </properties>
 
     <dependencies>
-<!--        <dependency>-->
-<!--            <groupId>com.vincent</groupId>-->
-<!--            <artifactId>vincent-common</artifactId>-->
-<!--        </dependency>-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>

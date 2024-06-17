@@ -15,12 +15,13 @@
     </modules>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <hutool.version>5.7.21</hutool.version>
         <vincent-common.version>1.0-SNAPSHOT</vincent-common.version>
         <vincent-mbg.version>1.0-SNAPSHOT</vincent-mbg.version>
         <vincent-project.version>1.0-SNAPSHOT</vincent-project.version>
         <vincent-custom-field.version>1.0-SNAPSHOT</vincent-custom-field.version>
+        <vincent-basic-service.version>1.0-SNAPSHOT</vincent-basic-service.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <hutool.version>5.7.21</hutool.version>
         <mybatis-plus.version>3.3.2</mybatis-plus.version>
         <mybatis-plus-generator.version>3.3.2</mybatis-plus-generator.version>
         <druid.version>1.2.8</druid.version>
@@ -41,6 +42,7 @@
     </parent>
 
     <dependencies>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
@@ -91,6 +93,12 @@
                 <groupId>com.vincent</groupId>
                 <artifactId>vincent-custom-field</artifactId>
                 <version>${vincent-custom-field.version}</version>
+            </dependency>
+            <!--vincent的基础服务模块-->
+            <dependency>
+                <groupId>com.vincent</groupId>
+                <artifactId>vincent-basic-service</artifactId>
+                <version>${vincent-basic-service.version}</version>
             </dependency>
             <!--mysql版本-->
             <dependency>
@@ -155,4 +163,12 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>

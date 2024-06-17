@@ -9,9 +9,7 @@
 
     <artifactId>vincent-custom-field</artifactId>
     <packaging>jar</packaging>
-
     <name>vincent-custom-field</name>
-    <url>http://maven.apache.org</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
