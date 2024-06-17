@@ -13,3 +13,7 @@
     - NotNull: 不为null，但是可以为空(empty)，没有size的约束
     - NotBlank: 只能用于String，不能为null，且trim()之后的size>0
     - NotEmpty: 用于集合类，不能为null，且size>0
+
+2. 添加依赖模块的流程
+   - idea新增模块
+   - 在vincent-project的pom.xml中添加新模块的依赖，dependencyManagement中维护新模块的版本信息
