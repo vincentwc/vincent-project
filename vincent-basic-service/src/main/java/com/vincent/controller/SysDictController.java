@@ -30,6 +30,8 @@ import java.util.List;
  */
 @Slf4j
 @Validated
+//支持跨域的注解
+//@CrossOrigin
 @RestController
 @RequestMapping("/sys-dict")
 @Api(value = "字典", tags = "字典")
