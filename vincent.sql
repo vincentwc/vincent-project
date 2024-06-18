@@ -4,11 +4,13 @@
 drop table if exists user_info;
 create table user_info
 (
-    id           varchar(64) NOT NULL comment '主键id',
-    user_name    varchar(64) comment '名称',
-    user_age     smallint comment '年龄',
-    address      varchar(64) comment '地址',
-    custom_field json comment '自定义字段',
+    `id`           varchar(64) NOT NULL comment '主键id',
+    `user_name`    varchar(64) comment '名称',
+    `user_age`     smallint comment '年龄',
+    `password`     varchar(64) comment '密码',
+    `phone`        varchar(32) comment '电话号码',
+    `address`      varchar(64) comment '地址',
+    `custom_field` json comment '自定义字段',
     PRIMARY KEY (id) USING BTREE
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4
@@ -47,7 +49,7 @@ drop table if exists sys_dict_item;
 create table sys_dict_item
 (
     `id`          int(11) NOT NULL AUTO_INCREMENT COMMENT '字典id',
-    `dict_id`     int(11)  NOT NULL COMMENT '字典id',
+    `dict_id`     int(11) NOT NULL COMMENT '字典id',
     `item_text`   VARCHAR(128) NULL COMMENT '字典项文本',
     `item_val`    VARCHAR(128) NULL COMMENT '字典项值',
     `item_sort`   int(11) NULL DEFAULT NULL COMMENT '字典项排序',

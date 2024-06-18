@@ -42,6 +42,16 @@ public class UserInfo implements Serializable {
     private String address;
 
     /**
+     * 电话
+     */
+    private String phone;
+
+    /**
+     * 密码
+     */
+    private String password;
+
+    /**
      * 自定义字段
      */
     private String customField;

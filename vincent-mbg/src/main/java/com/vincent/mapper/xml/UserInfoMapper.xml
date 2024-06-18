@@ -8,6 +8,8 @@
                     <result column="user_name" property="userName" />
                     <result column="user_age" property="userAge" />
                     <result column="address" property="address" />
+                    <result column="phone" property="phone" />
+                    <result column="password" property="password" />
                     <result column="custom_field" property="customField" />
         </resultMap>
 
