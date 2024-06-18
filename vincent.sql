@@ -8,6 +8,7 @@ create table user_info
     `user_name`    varchar(64) comment '名称',
     `user_age`     smallint comment '年龄',
     `password`     varchar(64) comment '密码',
+    `token`        varchar(256) comment '秘钥',
     `phone`        varchar(32) comment '电话号码',
     `address`      varchar(64) comment '地址',
     `custom_field` json comment '自定义字段',

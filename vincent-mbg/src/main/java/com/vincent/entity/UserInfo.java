@@ -42,6 +42,11 @@ public class UserInfo implements Serializable {
     private String address;
 
     /**
+     * 秘钥
+     */
+    private String token;
+
+    /**
      * 电话
      */
     private String phone;
