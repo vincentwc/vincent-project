@@ -12,6 +12,7 @@
         <module>vincent-common</module>
         <module>vincent-mbg</module>
         <module>vincent-basic-service</module>
+        <module>vincent-user</module>
     </modules>
 
     <properties>
@@ -20,6 +21,7 @@
         <vincent-project.version>1.0-SNAPSHOT</vincent-project.version>
         <vincent-custom-field.version>1.0-SNAPSHOT</vincent-custom-field.version>
         <vincent-basic-service.version>1.0-SNAPSHOT</vincent-basic-service.version>
+        <vincent-user.version>1.0-SNAPSHOT</vincent-user.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <hutool.version>5.7.21</hutool.version>
         <mybatis-plus.version>3.3.2</mybatis-plus.version>
@@ -99,6 +101,12 @@
                 <groupId>com.vincent</groupId>
                 <artifactId>vincent-basic-service</artifactId>
                 <version>${vincent-basic-service.version}</version>
+            </dependency>
+            <!--vincent的用户模块-->
+            <dependency>
+                <groupId>com.vincent</groupId>
+                <artifactId>vincent-user</artifactId>
+                <version>${vincent-user.version}</version>
             </dependency>
             <!--mysql版本-->
             <dependency>
