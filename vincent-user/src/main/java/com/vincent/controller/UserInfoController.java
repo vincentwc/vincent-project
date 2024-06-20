@@ -10,9 +10,12 @@ import com.vincent.valid.InsertValidGroup;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpHeaders;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -45,6 +48,23 @@ public class UserInfoController {
             return CommonResult.success(userInfo);
         } else {
             return CommonResult.failed("用户登录失败了");
+        }
+    }
+
+    /**
+     * 获取用户信息
+     *
+     * @param token
+     * @return
+     */
+    @GetMapping("/info")
+    @ApiOperation(value = "用户登录", httpMethod = "GET")
+    public CommonResult userInfo(@RequestHeader(name = HttpHeaders.AUTHORIZATION, required = true) String token) {
+        UserInfo userInfo = userInfoService.info(token);
+        if (ObjectUtil.isNotNull(userInfo)) {
+            return CommonResult.success(userInfo);
+        } else {
+            return CommonResult.failed("用户信息获取失败");
         }
     }
 }

@@ -10,4 +10,6 @@ import com.vincent.entity.UserInfoParam;
 public interface IUserInfoService extends IService<UserInfo> {
 
     UserInfo login(UserInfoParam userInfoParam);
+
+    UserInfo info(String token);
 }

@@ -11,6 +11,7 @@ create table user_info
     `token`        varchar(256) comment '秘钥',
     `phone`        varchar(32) comment '电话号码',
     `address`      varchar(64) comment '地址',
+    `portrait`      varchar(256) comment '图像url',
     `custom_field` json comment '自定义字段',
     PRIMARY KEY (id) USING BTREE
 ) ENGINE = InnoDB

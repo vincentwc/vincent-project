@@ -20,4 +20,11 @@ public class UserInfoServiceImpl extends ServiceImpl<UserInfoMapper, UserInfo> i
                 .eq(UserInfo::getPhone, userInfoParam.getPhone())
                 .one();
     }
+
+    @Override
+    public UserInfo info(String token) {
+        return lambdaQuery()
+                .eq(UserInfo::getToken, token)
+                .one();
+    }
 }
