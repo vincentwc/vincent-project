@@ -11,12 +11,32 @@ create table user_info
     `token`        varchar(256) comment '秘钥',
     `phone`        varchar(32) comment '电话号码',
     `address`      varchar(64) comment '地址',
-    `portrait`      varchar(256) comment '图像url',
+    `portrait`     varchar(256) comment '图像url',
     `custom_field` json comment '自定义字段',
     PRIMARY KEY (id) USING BTREE
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4
   COLLATE = utf8mb4_general_ci COMMENT ='用户表';
+
+/*==============================================================*/
+/* Table: custom_menu   菜单表                                    */
+/*==============================================================*/
+drop table if exists custom_menu;
+create table custom_menu
+(
+    `id`          int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
+    `title`       varchar(64) NOT NULL COMMENT '菜单名称',
+    `icon`        varchar(64) NULL COMMENT '菜单图标',
+    `path`        varchar(64) NOT NULL COMMENT '菜单路径',
+    `sort`        int(2) NOT NULL COMMENT '菜单排序',
+    `level`       int(2) NOT NULL COMMENT '菜单层级',
+    `parent_id`   int(11) COMMENT '父级菜单id',
+    `hidden`      int(1) NOT NULL DEFAULT 0 COMMENT '是否隐藏菜单，默认是0不隐藏',
+    `description` varchar(256) COMMENT '菜单描述',
+    PRIMARY KEY (id) USING BTREE
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4
+  COLLATE = utf8mb4_general_ci COMMENT ='菜单表';
 
 
 

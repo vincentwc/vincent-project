@@ -52,6 +52,18 @@ public class UserInfoController {
     }
 
     /**
+     * 用户退出
+     *
+     * @param token
+     * @return
+     */
+    @GetMapping("/logout")
+    @ApiOperation(value = "用户登录", httpMethod = "GET")
+    public CommonResult logout(@RequestHeader(name = HttpHeaders.AUTHORIZATION) String token) {
+            return CommonResult.success();
+    }
+
+    /**
      * 获取用户信息
      *
      * @param token
@@ -59,7 +71,7 @@ public class UserInfoController {
      */
     @GetMapping("/info")
     @ApiOperation(value = "用户登录", httpMethod = "GET")
-    public CommonResult userInfo(@RequestHeader(name = HttpHeaders.AUTHORIZATION, required = true) String token) {
+    public CommonResult userInfo(@RequestHeader(name = HttpHeaders.AUTHORIZATION) String token) {
         UserInfo userInfo = userInfoService.info(token);
         if (ObjectUtil.isNotNull(userInfo)) {
             return CommonResult.success(userInfo);
