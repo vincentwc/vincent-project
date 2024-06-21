@@ -1,6 +1,7 @@
 package com.vincent.controller;
 
 
+import cn.hutool.core.util.ObjectUtil;
 import com.vincent.api.CommonResult;
 import com.vincent.entity.CustomMenu;
 import com.vincent.entity.CustomMenuParam;
@@ -73,6 +74,23 @@ public class CustomMenuController {
         boolean flag = customMenuService.removeById(id);
         if (flag) {
             return CommonResult.success();
+        } else {
+            return CommonResult.failed();
+        }
+    }
+
+
+    /**
+     * 获取菜单详情
+     *
+     * @return
+     */
+    @GetMapping("/detail/{id}")
+    @ApiOperation(value = "保存或新增菜单", httpMethod = "delete")
+    public CommonResult detailMenu(@PathVariable(name = "id") Integer id) {
+        CustomMenu menu = customMenuService.getById(id);
+        if (ObjectUtil.isNotNull(menu)) {
+            return CommonResult.success(menu);
         } else {
             return CommonResult.failed();
         }
