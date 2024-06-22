@@ -31,9 +31,9 @@ public class SysDictItemServiceImpl extends ServiceImpl<SysDictItemMapper, SysDi
     }
 
     @Override
-    public List<SysDictItem> listDictItemsByCode(String dictType) {
+    public List<SysDictItem> listDictItemsByCode(String dictCode) {
         return lambdaQuery()
-                .inSql(SysDictItem::getDictId, "select id from sys_dict where dict_code = " + dictType)
+                .inSql(SysDictItem::getDictId, "select id from sÏys_dict where dict_code = '"+dictCode+"'" )
                 .orderByAsc(SysDictItem::getItemSort)
                 .eq(SysDictItem::getStatus, 1)
                 .list();
