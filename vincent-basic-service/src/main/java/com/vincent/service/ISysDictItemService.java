@@ -13,7 +13,7 @@ public interface ISysDictItemService extends IService<SysDictItem> {
 
     List<SysDictItem> listDictItems(String dictId);
 
-    List<SysDictItem> listDictItemsByType(String dictType);
+    List<SysDictItem> listDictItemsByCode(String dictType);
 
     boolean createDictItem(SysDictItemParam dictItemParam);
 }

@@ -27,7 +27,7 @@ public class FieldInfoServiceImpl extends ServiceImpl<FieldInfoMapper, FieldInfo
     @Override
     public List<SysDictItem> listTableInfos() {
         // 1. 获取所有表信息
-        return dictItemService.listDictItemsByType(TABLE_DICT_CODE);
+        return dictItemService.listDictItemsByCode(TABLE_DICT_CODE);
     }
 
     @Override
