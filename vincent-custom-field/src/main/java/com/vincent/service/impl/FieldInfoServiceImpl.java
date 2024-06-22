@@ -33,7 +33,7 @@ public class FieldInfoServiceImpl extends ServiceImpl<FieldInfoMapper, FieldInfo
     @Override
     public List<FieldInfo> listFieldInfos(String tableName) {
         return lambdaQuery()
-                .eq(FieldInfo::getFieldName, tableName)
+                .eq(FieldInfo::getTableName, tableName)
                 .list();
     }
 
