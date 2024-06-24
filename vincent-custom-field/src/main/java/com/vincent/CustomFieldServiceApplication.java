@@ -13,9 +13,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @MapperScans(value = {@MapperScan("com.vincent.mapper")})
 @SpringBootApplication(scanBasePackages = {"com.vincent"})
-public class CustomServiceApplication {
+public class CustomFieldServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(CustomServiceApplication.class, args);
+        SpringApplication.run(CustomFieldServiceApplication.class, args);
     }
 }

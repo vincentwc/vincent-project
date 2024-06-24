@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * @author vincent
@@ -20,6 +21,8 @@ public class FieldInfoServiceImpl extends ServiceImpl<FieldInfoMapper, FieldInfo
 
 
     public static final String TABLE_DICT_CODE = "table_name";
+
+    public static final String FIELD_TYPE = "field_type";
 
     @Resource
     private ISysDictItemService dictItemService;
@@ -32,9 +35,20 @@ public class FieldInfoServiceImpl extends ServiceImpl<FieldInfoMapper, FieldInfo
 
     @Override
     public List<FieldInfo> listFieldInfos(String tableName) {
-        return lambdaQuery()
+        List<FieldInfo> list = lambdaQuery()
                 .eq(FieldInfo::getTableName, tableName)
                 .list();
+        // 获取系统中的字段类型
+        List<SysDictItem> fieldTypeList = dictItemService.listDictItemsByCode(FIELD_TYPE);
+        for (FieldInfo fieldInfo : list) {
+            Integer fieldType = fieldInfo.getFieldType();
+            Optional<SysDictItem> optional = fieldTypeList
+                    .stream()
+                    .filter(dictItem -> fieldType.equals(dictItem.getId()))
+                    .findFirst();
+            optional.ifPresent(fieldInfo::setDictItem);
+        }
+        return list;
     }
 
     @Override

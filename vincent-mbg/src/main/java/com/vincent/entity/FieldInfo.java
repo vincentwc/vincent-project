@@ -3,6 +3,8 @@ package com.vincent.entity;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.io.Serializable;
+
+import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -43,6 +45,12 @@ public class FieldInfo implements Serializable {
      * 字段类型：对应字典项表的主键id
      */
     private Integer fieldType;
+
+    /**
+     * 字段类型对应字典项
+     */
+    @TableField(exist = false)
+    private SysDictItem dictItem;
 
     /**
      * 字段单位
