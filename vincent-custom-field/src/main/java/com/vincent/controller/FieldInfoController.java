@@ -2,7 +2,6 @@ package com.vincent.controller;
 
 
 import com.vincent.api.CommonResult;
-import com.vincent.entity.CustomField;
 import com.vincent.entity.FieldInfo;
 import com.vincent.entity.FieldInfoParam;
 import com.vincent.entity.SysDictItem;
