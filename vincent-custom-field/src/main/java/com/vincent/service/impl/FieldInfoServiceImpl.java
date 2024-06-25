@@ -1,5 +1,6 @@
 package com.vincent.service.impl;
 
+import cn.hutool.core.util.IdUtil;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.vincent.entity.FieldInfo;
 import com.vincent.entity.FieldInfoParam;
@@ -7,6 +8,7 @@ import com.vincent.entity.SysDictItem;
 import com.vincent.mapper.FieldInfoMapper;
 import com.vincent.service.IFieldInfoService;
 import com.vincent.service.ISysDictItemService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -54,7 +56,17 @@ public class FieldInfoServiceImpl extends ServiceImpl<FieldInfoMapper, FieldInfo
     @Override
     public boolean createFieldInfo(FieldInfoParam fieldInfoParam) {
         // 1. 判断有没有同名的字段
-        return false;
+        boolean existFlag = lambdaQuery()
+                .eq(FieldInfo::getTableName, fieldInfoParam.getTableName())
+                .eq(FieldInfo::getFieldName, fieldInfoParam.getFieldName())
+                .count() > 0;
+        if (existFlag) {
+            return false;
+        }
+        FieldInfo fieldInfo = new FieldInfo();
+        BeanUtils.copyProperties(fieldInfoParam, fieldInfo);
+        fieldInfo.setFieldEng(IdUtil.simpleUUID());
+        return save(fieldInfo);
     }
 
     @Override
@@ -63,7 +75,7 @@ public class FieldInfoServiceImpl extends ServiceImpl<FieldInfoMapper, FieldInfo
     }
 
     @Override
-    public int deleteFieldInfo(FieldInfoParam fieldInfoParam) {
-        return 0;
+    public int deleteFieldInfo(String id) {
+        return baseMapper.deleteById(id);
     }
 }

@@ -23,5 +23,5 @@ public interface IFieldInfoService extends IService<FieldInfo> {
 
     boolean updateFieldInfo(FieldInfoParam fieldInfoParam);
 
-    int deleteFieldInfo(FieldInfoParam fieldInfoParam);
+    int deleteFieldInfo(String id);
 }

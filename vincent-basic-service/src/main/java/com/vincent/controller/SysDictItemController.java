@@ -36,6 +36,13 @@ public class SysDictItemController {
         return CommonResult.success(list);
     }
 
+    @GetMapping("/list/code/{dictCode}")
+    @ApiOperation(value = "查询字典列表", httpMethod = "GET")
+    public CommonResult listDictItemsByCode(@PathVariable(value = "dictCode") String dictCode) {
+        List<SysDictItem> list = dictItemService.listDictItemsByCode(dictCode);
+        return CommonResult.success(list);
+    }
+
     @PostMapping("/create")
     @ApiOperation(value = "创建字典项", httpMethod = "POST")
     public CommonResult createDictItems(

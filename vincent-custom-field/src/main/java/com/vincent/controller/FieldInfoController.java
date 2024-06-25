@@ -94,13 +94,13 @@ public class FieldInfoController {
     /**
      * 删除自定义字段
      *
-     * @param fieldInfoParam
+     * @param id
      * @return
      */
-    @DeleteMapping("/list/field/delete")
+    @DeleteMapping("/list/field/delete/{id}")
     @ApiOperation(value = "删除自定义字段", httpMethod = "DELETE")
-    public CommonResult deleteFieldInfo(@RequestBody @Validated(UpdateValidGroup.class) FieldInfoParam fieldInfoParam) {
-        int count = fieldInfoService.deleteFieldInfo(fieldInfoParam);
+    public CommonResult deleteFieldInfo(@PathVariable(value = "id") String id) {
+        int count = fieldInfoService.deleteFieldInfo(id);
         if (count > 0) {
             return CommonResult.success();
         } else {
