@@ -90,6 +90,23 @@ public class FieldInfoController {
         }
     }
 
+    /**
+     * 更新自定义字段
+     *
+     * @param id
+     * @return
+     */
+    @GetMapping("/list/field/detail/{id}")
+    @ApiOperation(value = "更新自定义字段", httpMethod = "GET")
+    public CommonResult detailFieldInfo(@PathVariable("id") String id) {
+        FieldInfo fieldInfo = fieldInfoService.getById(id);
+        if (null != fieldInfo) {
+            return CommonResult.success(fieldInfo);
+        } else {
+            return CommonResult.failed();
+        }
+    }
+
 
     /**
      * 删除自定义字段
