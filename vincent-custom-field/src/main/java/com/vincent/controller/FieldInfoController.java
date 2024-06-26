@@ -62,10 +62,10 @@ public class FieldInfoController {
      * @param fieldInfoParam
      * @return
      */
-    @PostMapping("/list/field/create")
+    @PostMapping("/list/field/saveOrUpdate")
     @ApiOperation(value = "创建自定义字段", httpMethod = "POST")
-    public CommonResult createFieldInfo(@RequestBody @Validated(InsertValidGroup.class) FieldInfoParam fieldInfoParam) {
-        boolean createFlag = fieldInfoService.createFieldInfo(fieldInfoParam);
+    public CommonResult saveOrUpdateFieldInfo(@RequestBody FieldInfoParam fieldInfoParam) {
+        boolean createFlag = fieldInfoService.saveOrUpdateFieldInfo(fieldInfoParam);
         if (createFlag) {
             return CommonResult.success();
         } else {

@@ -54,22 +54,6 @@ public class FieldInfoServiceImpl extends ServiceImpl<FieldInfoMapper, FieldInfo
     }
 
     @Override
-    public boolean createFieldInfo(FieldInfoParam fieldInfoParam) {
-        // 1. 判断有没有同名的字段
-        boolean existFlag = lambdaQuery()
-                .eq(FieldInfo::getTableName, fieldInfoParam.getTableName())
-                .eq(FieldInfo::getFieldName, fieldInfoParam.getFieldName())
-                .count() > 0;
-        if (existFlag) {
-            return false;
-        }
-        FieldInfo fieldInfo = new FieldInfo();
-        BeanUtils.copyProperties(fieldInfoParam, fieldInfo);
-        fieldInfo.setFieldEng(IdUtil.simpleUUID());
-        return save(fieldInfo);
-    }
-
-    @Override
     public boolean updateFieldInfo(FieldInfoParam fieldInfoParam) {
         return false;
     }
@@ -77,5 +61,28 @@ public class FieldInfoServiceImpl extends ServiceImpl<FieldInfoMapper, FieldInfo
     @Override
     public int deleteFieldInfo(String id) {
         return baseMapper.deleteById(id);
+    }
+
+    @Override
+    public boolean saveOrUpdateFieldInfo(FieldInfoParam fieldInfoParam) {
+        String id = fieldInfoParam.getId();
+        FieldInfo fieldInfo;
+        if (null != id) {
+            fieldInfo = getById(id);
+            BeanUtils.copyProperties(fieldInfoParam, fieldInfo);
+        } else {
+            // 1. 判断有没有同名的字段
+            boolean existFlag = lambdaQuery()
+                    .eq(FieldInfo::getTableName, fieldInfoParam.getTableName())
+                    .eq(FieldInfo::getFieldName, fieldInfoParam.getFieldName())
+                    .count() > 0;
+            if (existFlag) {
+                return false;
+            }
+            fieldInfo = new FieldInfo();
+            BeanUtils.copyProperties(fieldInfoParam, fieldInfo);
+            fieldInfo.setFieldEng(IdUtil.simpleUUID());
+        }
+        return saveOrUpdate(fieldInfo);
     }
 }

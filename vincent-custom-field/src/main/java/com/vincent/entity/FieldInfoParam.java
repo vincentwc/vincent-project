@@ -9,6 +9,7 @@ import lombok.Data;
 import lombok.experimental.Accessors;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Null;
 import java.math.BigDecimal;
 
@@ -35,8 +36,8 @@ public class FieldInfoParam {
     private String fieldEng;
 
     @ApiModelProperty(value = "字段类型")
-    @NotBlank(groups = {InsertValidGroup.class, UpdateValidGroup.class}, message = "字段类型不能为空")
-    private String fieldType;
+    @NotNull(groups = {InsertValidGroup.class, UpdateValidGroup.class}, message = "字段类型不能为空")
+    private Integer fieldType;
 
     @ApiModelProperty(value = "字段单位")
     private String fieldUnit;

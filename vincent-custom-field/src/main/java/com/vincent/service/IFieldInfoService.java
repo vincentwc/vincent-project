@@ -19,9 +19,9 @@ public interface IFieldInfoService extends IService<FieldInfo> {
 
     List<FieldInfo> listFieldInfos(String tableName);
 
-    boolean createFieldInfo(FieldInfoParam fieldInfoParam);
-
     boolean updateFieldInfo(FieldInfoParam fieldInfoParam);
 
     int deleteFieldInfo(String id);
+
+    boolean saveOrUpdateFieldInfo(FieldInfoParam fieldInfoParam);
 }
